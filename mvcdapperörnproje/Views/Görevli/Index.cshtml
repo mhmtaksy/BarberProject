@@ -1,0 +1,66 @@
+﻿@model IEnumerable<mvcdapperörnproje.Models.GörevliModel>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+<br />
+<br />
+<br />
+<h2>Görevli Listesi</h2>
+
+<p>
+    @Html.ActionLink("Ekle/Güncelle", "EY")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.adSoyad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Yas)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tel)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.mesaiDurum)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Maas)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prim)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.adSoyad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Yas)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tel)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.mesaiDurum)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Maas)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prim)
+        </td>
+        <td>
+            @Html.ActionLink("Düzenle", "EY", new { id=item.görevliNo },new {@class="btn btn-warning"}) |
+            
+            @Html.ActionLink("Sil", "Delete", new {  id=item.görevliNo },new {@class="btn btn-danger"})
+        </td>
+    </tr>
+}
+
+</table>

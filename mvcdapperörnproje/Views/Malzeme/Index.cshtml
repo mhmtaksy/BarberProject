@@ -1,0 +1,48 @@
+﻿@model IEnumerable<mvcdapperörnproje.Models.MalzemeModel>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+<br />
+<br />
+<br />
+<h2>Malzeme Listesi</h2>
+
+<p>
+    @Html.ActionLink("Ekle/Güncelle", "EY")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.malzemeAdi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.malzemeTutar)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.hizmetNo)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.malzemeAdi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.malzemeTutar)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.hizmetNo)
+        </td>
+        <td>
+            @Html.ActionLink("Düzenle", "EY", new { id = item.malzemeNo },new {@class="btn btn-warning"}) |
+
+            @Html.ActionLink("Sil", "Delete", new { id = item.malzemeNo },new {@class="btn btn-danger"})
+        </td>
+    </tr>
+}
+
+</table>

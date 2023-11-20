@@ -1,0 +1,56 @@
+﻿@model mvcdapperörnproje.Models.SalonlarModel
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Silmek İstiyor musun?</h3>
+<div>
+    <h4>SalonlarModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.salonAdi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.salonAdi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.salonKapiNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.salonKapiNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.yapilanIslem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.yapilanIslem)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.islemSayisi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.islemSayisi)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

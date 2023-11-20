@@ -1,0 +1,54 @@
+﻿@model IEnumerable<mvcdapperörnproje.Models.HizmetlerModel>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+<br />
+<br />
+<br />
+<h2>Hizmet Listesi</h2>
+
+<p>
+    @Html.ActionLink("Ekle/Güncelle", "EY")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.hizmetAdi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.hizmetAmaci)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.odemeTuru)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.görevliNo)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.hizmetAdi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.hizmetAmaci)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.odemeTuru)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.görevliNo)
+        </td>
+        <td>
+            @Html.ActionLink("Düzenle", "EY", new { id=item.hizmetNo  },new { @class="btn btn-warning" }) |
+            
+            @Html.ActionLink("Sil", "Delete", new {  id=item.hizmetNo  }, new { @class = "btn btn-danger" })
+        </td>
+    </tr>
+}
+
+</table>

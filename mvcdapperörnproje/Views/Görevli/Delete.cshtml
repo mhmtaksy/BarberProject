@@ -1,0 +1,72 @@
+﻿@model mvcdapperörnproje.Models.GörevliModel
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Silme</h2>
+
+<h3>Silmek istediğinize emin misiniz?</h3>
+<div>
+    <h4>GörevliModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.adSoyad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.adSoyad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Yas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Yas)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.mesaiDurum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mesaiDurum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Maas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Maas)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Prim)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Prim)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Sil" class="btn btn-danger" /> |
+            @Html.ActionLink("Listeye geri dön", "Index")
+        </div>
+    }
+</div>
